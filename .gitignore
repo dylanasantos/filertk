@@ -1,3 +1,4 @@
-filertk_package/dist/
-filertk_package/src/filertk.egg-info
-filertk_package/src/filertk/__pycache__
+dist/
+src/*.egg-info/
+__pycache__/
+*.py[cod]
