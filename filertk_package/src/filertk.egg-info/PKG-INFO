@@ -1,0 +1,74 @@
+Metadata-Version: 2.4
+Name: filertk
+Version: 1.0.0
+Summary: package used for rewriting certain aspects of text in files
+Author-email: Dylan Santos <dasantos726@gmail.com>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/dylanasantos/filertk
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.14
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: colorama>=0.4.6
+Dynamic: license-file
+
+# filertk 1.0.0
+Filertk is a simple terminal-based system that allows for quick basic file rewrite instructions that would take excessive work by hand, such as renaming variables.\
+\
+**To activate:** simply write "filertk" within your terminal and paste in the file directory you want to modify. Afterwards input your commands when requested.\
+- All file modifications are located in a directory inside of <ins>filertk\results</ins>
+
+## Commands
+filertk has 17 different commands displayed at each launch of the program. These commands are used to specify the desired modifications to the file or to the results directory.
+
+> [!NOTE]
+> The general order of commands used does not matter. However, the identifiers you provide are a first-come-first-serve basis.
+
+### Identifiers
+Identifiers are used to inform filertk what exactly you are referencing in your commands, such as the text you want to find or replace.
+
+- **Name Identifiers "":** Used for specifying the text to match, rewrite, or exclude
+- **Range Identifiers (x-y):** Used for specifying the lines from start-end you want to either exclude or include
+<br><br>
+
+### Special Commands
+- **exit:** closes filertk program
+- **clear_res:** clears the entire file results directory, first displays all files being deleted and requests for permission
+- **clear "filename.ext":** clears the specified file from results directory, first displays file direcotry and requests for permission
+<br><br>
+
+### Reader Commands
+Commands used to inform filertk how the text to match should be interpereted.
+
+> [!NOTE]
+> Reader Commands do not handle casing sensitivity, only character matching, refer to Casing Commands for more info.
+
+- **match "text":** finds any words that contain the text
+- **exact "text":** only finds words that contain the exact text
+- **excluding "text" or (start-end):** excludes any matches of the word found (only used in match type) or ignores lines specified 
+- **from (start-end):** will only read/modify the lines specified (start and end are inclusive)
+<br><br>
+
+### Writer Commands
+Commands used to inform filertk how the matches found should be rewritten.
+
+- **with "text":** removes and replaces the new text only with what matched (ex: demo_1 -> new_1)
+- **replace "text":** removes the entire text with the match found and inserts the new text (ex: demo_1 -> new)
+- **r_append "text":** appends the new text to the end of the match (ex: demo_1 -> demo_1new)
+- **f_append "text":** appends the new text to the front of the match (ex: demo_1 -> newdemo_1)
+<br><br>
+
+### Casing Commands
+Commands used to inform filertk how the text casing should be handled.
+
+- **!ignore_case:** ignores the casing of matches, any and all capitalizations are treated the same via the reader but are replaced by the exact casing of the writer identifier input.
+- **!keep_case:** will attempt to copy the exact casing via index-by-index (this is only recommended for matches and writes of the same size), will automatically lowercase and uppercase all chars regardless if reader and writer identifier sizes match.<br>
+- **!camel_case:** given the exact casing of the user's writer identifier, will replace all words with said input UNLESS the match if full capitalized or lowercased. If so, it will match the casing.
+
+### File Copy Command
+Commands used on how the file modifications should be handled.
+
+- **~h_copy:** creates a copy of the exact file name inside of the results directory. (filertk defaults to this, but will display a warning if defaulted)
+- **~modify:** modifies the original file specified, creates an emergency backup inside of the results directory if the output is unwanted.
+- **~s_copy "filename.ext":** creates a copy of the file with a custom name provided inside of the results directory.

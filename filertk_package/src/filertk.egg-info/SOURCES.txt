@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/filertk/__init__.py
+src/filertk/command_reader.py
+src/filertk/file_manager.py
+src/filertk/main.py
+src/filertk.egg-info/PKG-INFO
+src/filertk.egg-info/SOURCES.txt
+src/filertk.egg-info/dependency_links.txt
+src/filertk.egg-info/entry_points.txt
+src/filertk.egg-info/requires.txt
+src/filertk.egg-info/top_level.txt

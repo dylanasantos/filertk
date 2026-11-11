@@ -1,0 +1,24 @@
+[project]
+name = "filertk"
+version = "1.0.0"
+dependencies = [
+  "colorama>=0.4.6"
+]
+authors = [
+  { name="Dylan Santos", email="dasantos726@gmail.com" },
+]
+description = "package used for rewriting certain aspects of text in files"
+readme = "README.md"
+requires-python = ">=3.14"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.scripts]
+filertk = "filertk.main:main"
+
+[project.urls]
+Homepage = "https://github.com/dylanasantos/filertk"
